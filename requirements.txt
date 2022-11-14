@@ -2,4 +2,4 @@ streamlit
 pandas
 numpy
 matplotlib
-skicit-learn
+scikit-learn
