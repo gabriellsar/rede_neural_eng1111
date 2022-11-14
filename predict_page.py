@@ -14,7 +14,7 @@ def criaDummies(array):
     return newArr
 
 def load_model():
-    with open('ml/saved_data.pkl', 'rb') as file:
+    with open('saved_data.pkl', 'rb') as file:
         data = pickle.load(file)
     return data
 
