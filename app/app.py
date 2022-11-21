@@ -1,7 +1,5 @@
 import streamlit as st
-from app.predict_page import show_predict_page
-from app.explore_page import show_explore_page
-
+from app.app import show_predict_page, show_explore_page
 
 page = st.sidebar.selectbox("Explore Or Predict", ("Predict", "Explore"))
 
