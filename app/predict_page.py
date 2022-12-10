@@ -3,14 +3,15 @@ import pickle
 import numpy as np
 
 def criaDummies(array):
+    newArr = array[:2] + array[3:]
     if array[2]== 0:        
-        newArr = array[:2] + array[3:] + [1,0,0,0]
+        newArr += [1,0,0,0]
     elif array[2]== 1:        
-        newArr = array[:2] + array[3:] + [0,1,0,0]
+        newArr += [0,1,0,0]
     elif array[2]== 2:        
-        newArr = array[:2] + array[3:] + [0,0,1,0]                            
+        newArr += [0,0,1,0]                            
     else:        
-        newArr = array[:2] + array[3:] + [0,0,0,1]                        
+        newArr += [0,0,0,1]                        
     return newArr
 
 def load_model():
@@ -56,8 +57,6 @@ def show_predict_page():
     fbs = st.radio("Açúcar no sangue em jejum > 120 mg/dl",("True","False"))
     restEcg = st.selectbox("Resultados eletrocardiográficos em repouso", rest_ecg)
     thalach = st.slider("Frequência cardíaca máxima alcançada", min_value=70, max_value=200, value=100)
-
-    # file = st.file_uploader("Upload a file")
 
     button = st.button("Enviar")
     if button:
